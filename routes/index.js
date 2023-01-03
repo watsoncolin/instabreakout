@@ -10,4 +10,15 @@ router.get("/", function (req, res, next) {
   res.render("index", viewOptions);
 });
 
+router.get("/breakout", function (req, res, next) {
+  const viewOptions = {
+    title: "instabreakout",
+    user_agent: req.headers["user-agent"],
+  };
+  if (req.headers["user-agent"].includes("Instagram")) {
+    res.contentType("application/pdf");
+  }
+  res.render("breakout", viewOptions);
+});
+
 module.exports = router;
