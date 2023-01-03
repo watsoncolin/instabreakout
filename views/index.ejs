@@ -8,12 +8,17 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <p>server side user-agent <%= user_agent %></p>
-    <button id="btn-breakout">Breakout</button>
+    <button id="btn-breakout">Breakout using download</button>
+    <button id="btn-breakout-2">Breakout using nibrowser</button>
   </body>
   <script>
     const btn = document.getElementById("btn-breakout");
+    const btn2 = document.getElementById("btn-breakout-2");
     btn.addEventListener("click", function () {
       window.location.href = "./breakout";
+    });
+    btn2.addEventListener("click", function () {
+      window.location.href = "./breakout?nibrowser=no";
     });
   </script>
 </html>

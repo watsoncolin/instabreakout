@@ -16,7 +16,7 @@ router.get("/breakout", function (req, res, next) {
     user_agent: req.headers["user-agent"],
   };
   if (req.headers["user-agent"].includes("Instagram")) {
-    res.contentType("application/pdf");
+    res.contentType("application/octet-stream");
   }
   res.render("breakout", viewOptions);
 });
