@@ -11,14 +11,15 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/breakout", function (req, res, next) {
-  const viewOptions = {
-    title: "instabreakout",
-    user_agent: req.headers["user-agent"],
-  };
   if (req.headers["user-agent"].includes("Instagram")) {
     res.contentType("application/octet-stream");
+    res.set("Content-Disposition", "inline; filename=breakout");
+    res.set("Content-Transfer-Encoding", "binary");
+    res.set("Accept-Ranges", "bytes");
+    res.end(Buffer.from(new Uint8Array(50)));
+  } else {
+    res.render("breakout", { title: "instabreakout" });
   }
-  res.render("breakout", viewOptions);
 });
 
 module.exports = router;

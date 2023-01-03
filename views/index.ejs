@@ -10,8 +10,8 @@
     <p>server side user-agent <%= user_agent %></p>
     <button id="btn-breakout">Breakout using download</button>
     <button id="btn-breakout-2">Breakout using nibrowser</button>
-    <a target="_blank" href="./breakout?nibrowser=no">
-      breakout using anchor and nibrowser</a
+    <a target="_blank" href="./breakout?nibrowser=no" download>
+      breakout using anchor and nibrowser and download attr</a
     >
   </body>
   <script>
@@ -21,7 +21,7 @@
       window.location.href = "./breakout";
     });
     btn2.addEventListener("click", function () {
-      window.location.href = "./breakout?nibrowser=no";
+      window.open("./breakout?nibrowser=no", "blank");
     });
   </script>
 </html>
