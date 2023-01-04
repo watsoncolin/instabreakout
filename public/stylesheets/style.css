@@ -1,4 +1,87 @@
-/* .animated-arrow {
+#waivr-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+}
+
+#waivr-overlay #waivr-overlay__message {
+  padding: 100px 40px 100px 40px;
+}
+
+#waivr-overlay #waivr-overlay__arrow {
+  content: "\2934";
+  position: fixed;
+  right: 0;
+  top: 10px;
+  width: 64px;
+  height: 64px;
+  opacity: 1;
+  color: #fff;
+  font-size: 64px;
+  animation: waivr-bounce 1.5s infinite ease-in-out;
+  -webkit-animation: waivr-bounce 1.5s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+#waivr-overlay #waivr-overlay__close {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+#waivr-overlay #waivr-overlay__close:hover {
+  opacity: 1;
+}
+#waivr-overlay #waivr-overlay__close:before,
+#waivr-overlay #waivr-overlay__close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 25px;
+  width: 2px;
+  background-color: #fff;
+}
+#waivr-overlay #waivr-overlay__close:before {
+  transform: rotate(45deg);
+}
+#waivr-overlay #waivr-overlay__close:after {
+  transform: rotate(-45deg);
+}
+
+#waivr-overlay #waivr-overlay__more-btn-wrapper {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 0, 0, 0) 70.71%);
+  padding: 10px;
+}
+#waivr-overlay #waivr-overlay__more-btn {
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  opacity: 0.7;
+  position: relative;
+  left: 50%;
+}
+
+#waivr-overlay .waivr-overlay__more-btn-wrapper--open #waivr-overlay__more-btn {
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+}
+
+#waivr-overlay #waivr-overlay__more-details {
+  display: none;
+}
+
+.animated-arrow {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -7,7 +90,8 @@
   top: 20px;
   right: 20px;
 }
-@-webkit-keyframes bounce {
+
+@-webkit-keyframes waivr-bounce {
   0%,
   20%,
   50%,
@@ -25,7 +109,7 @@
   }
 }
 
-@keyframes bounce {
+@keyframes waivr-bounce {
   0%,
   20%,
   50%,
@@ -42,8 +126,3 @@
     transform: translateY(-15px);
   }
 }
-
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-} */
