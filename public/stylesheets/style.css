@@ -14,9 +14,10 @@
 #waivr-overlay #waivr-overlay__message {
   padding: 100px 40px 100px 40px;
 }
-
-#waivr-overlay #waivr-overlay__arrow {
+#waivr-overlay #waivr-overlay__arrow:before {
   content: "\2934";
+}
+#waivr-overlay #waivr-overlay__arrow {
   position: fixed;
   right: 0;
   top: 10px;
