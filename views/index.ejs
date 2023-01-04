@@ -21,26 +21,24 @@
     </div>
   </body>
   <script>
-    const btn = document.getElementById("btn-subscribe");
+    const subscribeBtn = document.getElementById("btn-subscribe");
     const moreBtn = document.getElementById("waivr-overlay__more-btn");
     const closeBtn = document.getElementById("waivr-overlay__close");
     const overlayElm = document.getElementById("waivr-overlay");
     const moreDetailsElm = document.getElementById("waivr-overlay__more-details");
     const moreDetailsWrapperElm = document.getElementById("waivr-overlay__more-btn-wrapper");
-    btn.addEventListener("click", function () {
-      if (window.navigator.userAgent.includes("Instagram") && window.navigator.userAgent.includes("Android")) {
-        window.location.href = "./breakout";
-      } else {
-        toggleVisibility(overlayElm);
-      }
+    subscribeBtn.addEventListener("click", function () {
+      // if (window.navigator.userAgent.includes("Instagram") && window.navigator.userAgent.includes("Android")) {
+      //   window.location.href = "./breakout";
+      // } else {
+      toggleVisibility(overlayElm);
+      // }
     });
 
     closeBtn.addEventListener("click", function () {
-      console.log("click exit");
       toggleVisibility(overlayElm);
     });
     moreBtn.addEventListener("click", function () {
-      console.log("click more");
       toggleVisibility(moreDetailsElm);
       if (moreDetailsWrapperElm.className.includes("--open")) {
         moreDetailsWrapperElm.className = "";
@@ -49,7 +47,7 @@
       }
     });
     function toggleVisibility(elem) {
-      if (elem.style.display == "block") {
+      if (elem.checkVisibility()) {
         elem.style.display = "none";
       } else {
         elem.style.display = "block";
