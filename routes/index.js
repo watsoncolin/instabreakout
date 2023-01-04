@@ -12,7 +12,7 @@ router.get("/", function (req, res, next) {
 
 router.get("/breakout", function (req, res, next) {
   if (req.headers["user-agent"].includes("Instagram")) {
-    res.contentType("application/force-download");
+    res.contentType("application/octet-stream");
     res.set("Content-Disposition", "attachment; filename='breakout'");
     res.set("Content-Transfer-Encoding", "binary");
     res.set("Accept-Ranges", "bytes");
