@@ -19,6 +19,10 @@
         <div id="waivr-overlay__more-details">To provide a better experience we need to leave instagram</div>
       </div>
     </div>
+    <div>
+      <input id="arrow" type="text" value="&uarr" />
+      <div id="arrow-display"></div>
+    </div>
   </body>
   <script>
     const subscribeBtn = document.getElementById("btn-subscribe");
@@ -27,6 +31,7 @@
     const overlayElm = document.getElementById("waivr-overlay");
     const moreDetailsElm = document.getElementById("waivr-overlay__more-details");
     const moreDetailsWrapperElm = document.getElementById("waivr-overlay__more-btn-wrapper");
+    const arrowInput = document.getElementById("arrow");
     subscribeBtn.addEventListener("click", function () {
       // if (window.navigator.userAgent.includes("Instagram") && window.navigator.userAgent.includes("Android")) {
       //   window.location.href = "./breakout";
@@ -53,5 +58,10 @@
         elem.style.display = "block";
       }
     }
+
+    arrowInput.addEventListener("keyup", function (evt) {
+      const arrow = document.getElementById("arrow-display");
+      arrow.innerHTML = evt.target.value + ";";
+    });
   </script>
 </html>
