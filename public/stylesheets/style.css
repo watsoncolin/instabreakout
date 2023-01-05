@@ -15,7 +15,7 @@
   padding: 100px 40px 100px 40px;
 }
 #waivr-overlay #waivr-overlay__arrow:before {
-  content: "\2934";
+  content: "\21E1";
 }
 #waivr-overlay #waivr-overlay__arrow {
   position: fixed;
