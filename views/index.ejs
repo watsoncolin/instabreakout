@@ -10,54 +10,28 @@
     <div id="waivr-overlay">
       <div id="waivr-overlay__arrow"></div>
       <div id="waivr-overlay__close"></div>
-      <div id="waivr-overlay__message">
-        <p>
-          To continue to <span class="waivr-overlay__message--emphasize">Pay by Bank</span> and save an extra
-          <span class="waivr-overlay__message--emphasize">1%</span> open us in your browser
-        </p>
-        <p>Tap '<span>&#8943;</span>' above and select 'Open in Browser'</p>
-      </div>
-      <div id="waivr-overlay__more-btn-wrapper">
-        <div id="waivr-overlay__more-btn"></div>
-        <div id="waivr-overlay__more-details" style="display: none">
-          <p>To provide a better experience we need to leave instagram</p>
+      <div id="waivr-overlay__body">
+        <div id="waivr-overlay__message">This browser is not supported</div>
+        <div id="waivr-overlay__instructions">
+          <p>Tap <span id="waivr-overlay__instructions__ellipsis">&#8943;</span> and select 'Open in Browser'</p>
         </div>
       </div>
-      <div id="waivr-overlay__more-btn-wrapper--mirror"></div>
     </div>
   </body>
   <script>
     const subscribeBtn = document.getElementById("btn-subscribe");
-    const moreBtn = document.getElementById("waivr-overlay__more-btn");
     const closeBtn = document.getElementById("waivr-overlay__close");
     const overlayElm = document.getElementById("waivr-overlay");
-    const moreDetailsElm = document.getElementById("waivr-overlay__more-details");
-    const moreDetailsWrapperElm = document.getElementById("waivr-overlay__more-btn-wrapper");
     subscribeBtn.addEventListener("click", function () {
-      // if (window.navigator.userAgent.includes("Instagram") && window.navigator.userAgent.includes("Android")) {
-      //   window.location.href = "./breakout";
-      // } else {
-      toggleVisibility(overlayElm);
-      // }
+      if (window.navigator.userAgent.includes("Instagram")) {
+        overlayElm.style.display = "block";
+      } else {
+        subscribeBtn.innerText = "flow continues..";
+      }
     });
 
     closeBtn.addEventListener("click", function () {
-      toggleVisibility(overlayElm);
+      overlayElm.style.display = "none";
     });
-    moreBtn.addEventListener("click", function () {
-      toggleVisibility(moreDetailsElm);
-      if (moreDetailsWrapperElm.className.includes("--open")) {
-        moreDetailsWrapperElm.className = "";
-      } else {
-        moreDetailsWrapperElm.className = "waivr-overlay__more-btn-wrapper waivr-overlay__more-btn-wrapper--open";
-      }
-    });
-    function toggleVisibility(elem) {
-      if (elem.style.display !== "none") {
-        elem.style.display = "none";
-      } else {
-        elem.style.display = "block";
-      }
-    }
   </script>
 </html>
