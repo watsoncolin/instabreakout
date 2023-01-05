@@ -25,8 +25,9 @@
 }
 
 #waivr-overlay #waivr-overlay__instructions {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 18px;
+  font-weight: 400;
 }
 
 #waivr-overlay #waivr-overlay__instructions__ellipsis {
