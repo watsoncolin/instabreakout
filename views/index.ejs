@@ -18,6 +18,11 @@
       </div>
     </div>
   </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"
+    integrity="sha512-H6aKTjvYAazW0iNuGj1f2dZvSWlt1HGZGEDsXRPETo2IB4H6v36Vl2qiZNlCRxOp0kT7iBf+7USNPavNscZGAw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
   <script>
     const subscribeBtn = document.getElementById("btn-subscribe");
     const closeBtn = document.getElementById("waivr-overlay__close");
@@ -32,6 +37,13 @@
 
     closeBtn.addEventListener("click", function () {
       overlayElm.style.display = "none";
+    });
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var animation = bodymovin.loadAnimation({
+        container: document.getElementById("waivr-overlay__arrow"), // Required
+        path: "./json/animation.json", // Required
+        renderer: "svg", // Required
+      });
     });
   </script>
 </html>
