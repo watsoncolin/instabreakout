@@ -5,11 +5,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   display: none;
   font-family: "Inter", Helvetica, sans-serif;
   font-style: normal;
   text-align: center;
+  color: black;
 }
 
 #waivr-overlay #waivr-overlay__body {
